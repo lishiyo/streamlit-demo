@@ -7,7 +7,7 @@ openai_api_key = st.sidebar.text_input('OpenAI API Key')
 
 def generate_response(input_text, temperature=0.7, max_tokens=-1, top_p=1.0, frequency_penalty=0.0, presence_penalty=0.0, stop=['\n']):
   # https://api.python.langchain.com/en/latest/llms/langchain.llms.openai.OpenAI.html
-  llm = OpenAI(temperature, openai_api_key=openai_api_key)
+  llm = OpenAI(temperature=temperature, openai_api_key=openai_api_key)
   st.info(llm(input_text))
 
 with st.form('my_form'):
